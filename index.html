@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Friending</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speed Friending</h1>
+    <p>Enter your participant ID to be redirected to your page:</p>
+    <input type="text" id="participantId" placeholder="e.g., P001, E002, B012">
+    <button onclick="redirectToParticipantPage()">Go</button>
+
+    <script>
+        function redirectToParticipantPage() {
+            const participantId = document.getElementById('participantId').value;
+            const validIdPattern = /^[PEB]\d{3}$/; // Pattern to match IDs like P001, E002, B012
+            if (validIdPattern.test(participantId)) {
+                window.location.href = `participants/${participantId}.html`;
+            } else {
+                alert('Please enter a valid participant ID (e.g., P001, E002, B012).');
+            }
+        }
+    </script>
+</body>
+</html>
