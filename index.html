@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <h1>Speed Friending</h1>
+    <h1>Queer Speed Friending</h1>
     <p>Enter your participant ID:</p>
     <p>Wpisz swoje ID:</p>
     <input type="text" id="participantId" placeholder="e.g., P001, E002, B012">
@@ -43,7 +43,7 @@
             participantId = participantId.toUpperCase(); // Convert input to uppercase
             const validIdPattern = /^[PEB]\d{3}$/; // Pattern to match IDs like P001, E002, B012
             if (validIdPattern.test(participantId)) {
-                window.location.href = `participants/${participantId}.html`;
+                window.location.href = `https://kornishock.github.io/speed-friending/participants/${participantId}.html`;
             } else {
                 alert('Wpisz poprawne ID (np.: P001, E002, B012).\nPlease enter a valid participant ID (e.g., P001, E002, B012).');
             }
